@@ -5,8 +5,8 @@ export default () => {
   return (
     <div className="panel-list">
       <TabsContext.Consumer>
-        {({ selectedTabIndex, tabsData }) => {
-          return tabsData.map((tab, index) => (
+        {({ selectedTabIndex, data }) => {
+          return data.map((tab, index) => (
             <div key={index} hidden={selectedTabIndex !== index}>
               {tab.panel}
             </div>

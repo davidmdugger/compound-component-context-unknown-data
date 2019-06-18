@@ -5,8 +5,8 @@ export default () => {
   return (
     <div className="tab-list">
       <TabsContext.Consumer>
-        {({ tabsData, selectedTabIndex, selectTab }) => {
-          return tabsData.map(({ name }, index) => (
+        {({ data, selectedTabIndex, selectTab }) => {
+          return data.map(({ name }, index) => (
             <button className="tab" key={index} style={{ backgroundColor: selectedTabIndex === index ? '#ccc' : 'white' }} onClick={() => {
               selectTab(index);
             }}>{name}</button>
