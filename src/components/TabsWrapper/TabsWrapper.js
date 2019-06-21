@@ -7,21 +7,22 @@ export const TabsContext = React.createContext({
 class TabsWrapper extends Component {
   state = {
     selectedTabIndex: 0,
-    data: []
+    quotes: []
   }
 
   selectTab = selectedTabIndex => this.setState({ selectedTabIndex });
 
   render() {
-    const { selectTab, state: { selectedTabIndex }, props: { data } } = this;
+    const { selectTab, state: { selectedTabIndex }, props: { data, children, quotes } } = this;
 
     return (
       <TabsContext.Provider value={{
         selectedTabIndex,
         selectTab,
-        data
+        data,
+        quotes
       }}>
-        {this.props.children}
+        {children}
       </TabsContext.Provider>
     )
   }
